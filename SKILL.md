@@ -105,7 +105,3 @@ podman volume rm <name>
 - **Daemonless**: No background daemon required; each command is a direct process
 - **Docker-compatible CLI**: Most `docker` commands work with `podman`
 - **Alias support**: You can alias `docker` to `podman` for compatibility
-
-## Rationale
-
-Due to corporate licensing requirements, we do not use `docker`. Instead, developers use `podman` for container development.
