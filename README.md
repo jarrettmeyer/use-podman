@@ -18,7 +18,7 @@ git pull origin main
 
 ## Rationale
 
-Some organizations may prefer `podman` over `docker` due to commercial licensing differences.
+Some users or organizations may prefer `podman` over `docker` due to licensing differences.
 
 ## References
 
