@@ -19,7 +19,7 @@ podman --version
 
 ## Commands
 
-### build
+### `build`
 
 Build an image from a Containerfile/Dockerfile.
 
@@ -32,7 +32,7 @@ podman build --tag myapp:v1.0 --file Containerfile.dev .
 podman build --no-cache --tag myapp:latest .
 ```
 
-### run
+### `run`
 
 Run a container from an image.
 
@@ -46,10 +46,21 @@ podman run --rm --volume $(pwd):/app myapp:latest
 podman run --env DATABASE_URL=postgres://... myapp:latest
 ```
 
-### logs
+### `logs`
 
-Fetch logs from a container.
+**IMPORTANT**: When the user asks about container logs, automatically spawn a subagent that reads `agents/log-reader.md` to handle log analysis. This keeps the main context clean and allows focused log investigation.
 
+Spawn the `log-reader` subagent using the Task tool:
+```
+Task:
+- subagent_type: general-purpose
+- description: "Analyze container logs"
+- prompt: "Read agents/log-reader.md and follow its instructions to analyze logs for <container-name>. The user wants to <what the user asked for>."
+```
+
+The subagent will fetch logs using podman, analyze them, and report findings back to you.
+
+Basic log commands (reference only - the subagent will use these):
 ```bash
 podman logs [OPTIONS] <container>
 
@@ -57,9 +68,11 @@ podman logs [OPTIONS] <container>
 podman logs mycontainer
 podman logs --follow mycontainer    # follow logs
 podman logs --tail 100 mycontainer  # last 100 lines
+podman compose logs                 # all services
+podman compose logs <service>       # specific service
 ```
 
-### compose
+### `compose`
 
 Run multi-container applications.
 
