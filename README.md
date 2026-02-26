@@ -3,8 +3,21 @@
 ## Installation
 
 ```bash
+# Checkout in your Claude skills directory
 cd ~/.claude/skills
 git clone https://github.com/jarrettmeyer/use-podman.git
+```
+
+Or, symlink from another checkout location.
+
+```bash
+# Checkout in another directory
+cd /path/to/git/checkouts/
+git clone https://github.com/jarrettmeyer/use-podman.git
+
+# Create a symlink from the checkout directory to Claude skills directory
+cd ~/.claude/skills/
+ln -s /path/to/git/checkouts/use-podman/ .
 ```
 
 ### Updating
