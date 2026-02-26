@@ -1,6 +1,6 @@
 ---
 name: use-podman
-description: Use podman when performing container operations on localhost.
+description: Use podman for local container operations: building images, running containers, docker-compose, container logs, and volume/port management on localhost or dev machines. Trigger when users mention running locally or on localhost, or are troubleshooting local docker/podman issues. Skip for cloud deployments, Kubernetes, CI/CD, and registry operations.
 ---
 
 # SKILL: use-podman

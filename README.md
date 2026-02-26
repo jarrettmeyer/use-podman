@@ -19,3 +19,8 @@ git pull origin main
 ## Rationale
 
 Some organizations may prefer `podman` over `docker` due to commercial licensing differences.
+
+## References
+
+- [Claude Skills Documentation](https://code.claude.com/docs/en/skills)
+- [Claude Skills (GitHub examples)](https://github.com/anthropics/skills)
